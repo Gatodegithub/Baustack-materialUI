@@ -15,6 +15,7 @@ import React, { useEffect, useRef, useState } from "react";
 const useStyles = makeStyles((theme) => ({
   menuBtn: {
     fontSize: "18px",
+    fontWeight: 500,
   },
   paper: {
     width: "300px",

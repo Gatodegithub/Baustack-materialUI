@@ -17,6 +17,7 @@ import PlanificacionDeEventos from "./templates/PlanificacionDeEventos";
 import GestionDeProyectos from "./templates/GestionDeProyectos";
 import MenuMovil from "./MenuMovil";
 import { Link } from "react-router-dom";
+import Sticky from "wil-react-sticky";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -75,33 +76,46 @@ export default function TopicLayout({ topicId }) {
       <NavBar />
       <Container className={classes.root}>
         <Grid container>
-          <Grid item xs={12} md={4} lg={3} align="center">
+          <Grid
+            item
+            xs={12}
+            md={4}
+            lg={3}
+            align="center"
+            id="containerSelectorFocus"
+          >
             <Hidden mdUp>
               <MenuMovil />
             </Hidden>
             <Hidden smDown>
-              <MenuList className={classes.menu}>
-                <MenuItem disableRipple>
-                  <Link to="/crm">Crm</Link>
-                </MenuItem>
-                <MenuItem disableRipple>
-                  <Link to="/gestiondecausas">Gestion de causas</Link>
-                </MenuItem>
-                <MenuItem disableRipple>
-                  <Link to="/contratosporvencer">Contratos Por Vencer</Link>
-                </MenuItem>
-                <MenuItem disableRipple>
-                  <Link to="/controldepolizas">Control De Polizas</Link>
-                </MenuItem>
-                <MenuItem disableRipple>
-                  <Link to="/planificaciondeeventos">
-                    Planificacion De Eventos
-                  </Link>
-                </MenuItem>
-                <MenuItem disableRipple>
-                  <Link to="/gestiondeproyectos">Gestión De Proyectos</Link>
-                </MenuItem>
-              </MenuList>
+              <Sticky
+                containerSelectorFocus="#containerSelectorFocus"
+                offsetTop={100}
+                stickyEnableRange={[768, Infinity]}
+              >
+                <MenuList className={classes.menu}>
+                  <MenuItem disableRipple>
+                    <Link to="/crm">Crm</Link>
+                  </MenuItem>
+                  <MenuItem disableRipple>
+                    <Link to="/gestiondecausas">Gestion de causas</Link>
+                  </MenuItem>
+                  <MenuItem disableRipple>
+                    <Link to="/contratosporvencer">Contratos Por Vencer</Link>
+                  </MenuItem>
+                  <MenuItem disableRipple>
+                    <Link to="/controldepolizas">Control De Polizas</Link>
+                  </MenuItem>
+                  <MenuItem disableRipple>
+                    <Link to="/planificaciondeeventos">
+                      Planificacion De Eventos
+                    </Link>
+                  </MenuItem>
+                  <MenuItem disableRipple>
+                    <Link to="/gestiondeproyectos">Gestión De Proyectos</Link>
+                  </MenuItem>
+                </MenuList>
+              </Sticky>
             </Hidden>
           </Grid>
           <Grid item xs={12} md={8} lg={9}>
