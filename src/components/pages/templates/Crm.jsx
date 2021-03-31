@@ -1,4 +1,5 @@
 import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core";
+import classNames from "classnames";
 import React from "react";
 import Videos from "../../../assets/videos/Una fuente de información.MOV";
 
@@ -19,6 +20,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       marginTop: theme.spacing(4),
       width: "100%",
+    },
+  },
+  marginVideo: {
+    [theme.breakpoints.up("md")]: {
+      marginRight: "230px",
     },
   },
 }));
@@ -70,7 +76,7 @@ export default function Crm() {
         </Button>
       </Grid>
       <Grid item xs={12} md={12} className="pt-3">
-        <Box className="contVideo" style={{ marginRight: "230px" }}>
+        <Box className={classNames(classes.marginVideo, "contVideo")}>
           <video
             autoPlay
             muted
