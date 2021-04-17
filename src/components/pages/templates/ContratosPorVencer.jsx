@@ -39,7 +39,7 @@ export default function Crm() {
   const classes = useStyles();
 
   return (
-    <Grid container>
+    <Grid container className="animate__animated animate__fadeIn">
       <Grid item xs={12} lg={12}>
         <Box className={classes.templateImg}></Box>
       </Grid>

@@ -57,7 +57,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <Container className={classes.root} component="header">
+    <Container
+      className={classNames(classes.root, "animate__animated animate__fadeIn animate__faster")}
+      component="header"
+    >
       <Grid container alignItems="flex-end">
         <Grid item sm={12} md={5}>
           <Typography variant="h1" className={classes.title}>
@@ -99,7 +102,7 @@ export default function Header() {
             component="img"
             src={imgHeader}
             alt="Header img"
-            style={{width: "100%" }}
+            style={{ width: "100%" }}
           ></Box>
         </Grid>
       </Grid>

@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menu: {
     padding: "40px 0px 0px",
+    outline:"none",
     "& li": {
       padding: 0,
       "&:hover": {

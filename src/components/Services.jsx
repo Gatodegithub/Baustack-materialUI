@@ -67,11 +67,14 @@ function ServiceCard({ title, arrImg, description, id }) {
 
   const removeAccents = (str) => {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  } 
+  };
 
   return (
     <Box className={classes.paper}>
-      <a href={`${removeAccents(title).replace(/ /g, "").toLowerCase()}`} style={{textDecoration:"none"}}>
+      <a
+        href={`${removeAccents(title).replace(/ /g, "").toLowerCase()}`}
+        style={{ textDecoration: "none" }}
+      >
         <Card className={classes.card}>
           <Typography
             variant="h6"

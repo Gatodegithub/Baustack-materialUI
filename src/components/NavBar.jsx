@@ -3,6 +3,7 @@ import { Box, Button, Link, makeStyles } from "@material-ui/core";
 import logo from "../assets/img/logo.png";
 import "../helpers/stylesNav.css";
 import classNames from "classnames";
+import translator from "../assets/img/translator.svg";
 
 const useStyles = makeStyles((theme) => ({
   sizeFont: {
@@ -12,6 +13,21 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       fontSize: "18px",
     },
+  },
+  translator: {
+    "@media (max-width: 800px)": {
+      display: "none!important",
+    },
+  },
+  translatorCel: {
+    "@media (min-width: 800px)": {
+      display: "none!important",
+    },
+  },
+  translatorA: {
+    padding: "0px!important",
+    minWidth: "35px!important",
+    cursor: "pointer!important",
   },
 }));
 
@@ -44,6 +60,7 @@ export default function NavBar() {
             style={{ verticalAlign: "middle" }}
           />
         </Link>
+
         <Box component="ul" className="listMenu" ref={navBarMenuRef}>
           <li>
             <Link
@@ -65,7 +82,32 @@ export default function NavBar() {
               Iniciar Sesión
             </Button>
           </li>
+          <li className={classes.translator}>
+            <Link className={classes.translatorA}>
+              <Box
+                component="img"
+                src={translator}
+                alt="Translator icon made with free pic"
+                style={{ verticalAlign: "middle",marginLeft:"40px" }}
+              />
+            </Link>
+          </li>
         </Box>
+
+        <Link className={classes.translatorCel}>
+          <Box
+            component="img"
+            src={translator}
+            alt="Translator icon made with free pic"
+            style={{
+              verticalAlign: "middle",
+              // display: "visible",
+              position:"absolute",
+              right:"80px",
+              top: "28px",
+            }}
+          />
+        </Link>
         <button
           className="navbar-toggler"
           ref={navBarTogglerRef}
